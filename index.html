@@ -6,35 +6,6 @@
   <title>Textlee Web Call</title>
   <link rel="stylesheet" href="style.css">
 
-  <script>
-    // Focus on the input field when the page loads
-    window.onload = function() {
-      document.getElementById('userNameInput').focus();
-    }
-
-    // Function to join a public room
-    function joinCall() {
-      let userName = document.getElementById('userNameInput').value;
-      if (userName) {
-        alert('Joining public room as ' + userName);
-      } else {
-        alert('Please enter your name!');
-      }
-    }
-
-    // Function to create a private room with a random 3-digit room ID
-    function createPrivateRoom() {
-      let userName = document.getElementById('userNameInput').value;
-      if (userName) {
-        let roomId = Math.floor(100 + Math.random() * 900); // Generate a 3-digit room ID
-        alert('Your private room ID is: ' + roomId);
-        // Redirect to the private room page (or further steps) here if needed
-      } else {
-        alert('Please enter your name!');
-      }
-    }
-  </script>
-
   <style>
     /* Inline styles to ensure mobile compatibility */
     body {
@@ -91,29 +62,18 @@
   <div id="homeScreen">
     <h1>Textlee Web Call</h1>
     <h2>Enter your name to get started</h2>
-    <input id="userNameInput" type="text" placeholder="Enter your name" />
-    <button onclick="joinCall()">Join Public Room</button>
+    <input id="userNameInput" type="text" placeholder="Enter your name" onclick="this.focus()" />
     <button onclick="createPrivateRoom()">Create Private Room</button>
   </div>
 
   <script>
-    // Example functions for Join and Create Room buttons
-    function joinCall() {
-      let userName = document.getElementById('userNameInput').value;
-      if (userName) {
-        // Redirect to video call screen (for example)
-        alert('Joining public room as ' + userName);
-      } else {
-        alert('Please enter your name!');
-      }
-    }
-
+    // Function for Create Private Room button
     function createPrivateRoom() {
       let userName = document.getElementById('userNameInput').value;
       if (userName) {
         let roomId = Math.floor(100 + Math.random() * 900); // Generate a 3-digit room ID
         alert('Your private room ID is: ' + roomId);
-        // Redirect to private room page (for example)
+        // You can redirect to a private room page here with the room ID or handle further actions
       } else {
         alert('Please enter your name!');
       }

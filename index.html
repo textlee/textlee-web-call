@@ -11,6 +11,28 @@
     window.onload = function() {
       document.getElementById('userNameInput').focus();
     }
+
+    // Function to join a public room
+    function joinCall() {
+      let userName = document.getElementById('userNameInput').value;
+      if (userName) {
+        alert('Joining public room as ' + userName);
+      } else {
+        alert('Please enter your name!');
+      }
+    }
+
+    // Function to create a private room with a random 3-digit room ID
+    function createPrivateRoom() {
+      let userName = document.getElementById('userNameInput').value;
+      if (userName) {
+        let roomId = Math.floor(100 + Math.random() * 900); // Generate a 3-digit room ID
+        alert('Your private room ID is: ' + roomId);
+        // Redirect to the private room page (or further steps) here if needed
+      } else {
+        alert('Please enter your name!');
+      }
+    }
   </script>
 
   <style>
@@ -89,8 +111,9 @@
     function createPrivateRoom() {
       let userName = document.getElementById('userNameInput').value;
       if (userName) {
-        // Redirect to create private room screen (for example)
-        alert('Creating private room for ' + userName);
+        let roomId = Math.floor(100 + Math.random() * 900); // Generate a 3-digit room ID
+        alert('Your private room ID is: ' + roomId);
+        // Redirect to private room page (for example)
       } else {
         alert('Please enter your name!');
       }

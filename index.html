@@ -1,32 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Textlee Web Call</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textlee Web Call</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // Focus on the input field when the page loads
+    window.onload = function() {
+      document.getElementById('userNameInput').focus();
+    }
+  </script>
+
+  <style>
+    /* Inline styles to ensure mobile compatibility */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #00A8FF; /* Blue background */
+      color: white;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: white;
+      margin: 20px 0;
+    }
+
+    #homeScreen {
+      text-align: center;
+      width: 100%;
+    }
+
+    #userNameInput {
+      padding: 12px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      width: 80%;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background-color: #FF69B4; /* Pink buttons */
+      color: white;
+      padding: 15px 32px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #FF1493; /* Darker pink on hover */
+    }
+  </style>
 </head>
 <body>
-    <!-- Home Screen -->
-    <div id="homeScreen">
-        <h1>Welcome to Textlee Web Call</h1>
-        <input type="text" id="userNameInput" placeholder="Enter your name">
-        <button onclick="startVideoCall()">Start Video Call</button>
-        <br>
-        <button onclick="goToVideoCallScreen()">Join Public Room</button>
-        <button onclick="createPrivateRoom()">Create Private Room</button>
-    </div>
+  <div id="homeScreen">
+    <h1>Textlee Web Call</h1>
+    <h2>Enter your name to get started</h2>
+    <input id="userNameInput" type="text" placeholder="Enter your name" />
+    <button onclick="joinCall()">Join Public Room</button>
+    <button onclick="createPrivateRoom()">Create Private Room</button>
+  </div>
 
-    <!-- Video Call Screen -->
-    <div id="videoCallScreen" style="display:none;">
-        <h2 id="userNameDisplay"></h2>
-        <video id="localVideo" autoplay muted></video>
-        <div id="participants"></div>
-        <button onclick="startCamera()">Start Camera</button>
-        <button onclick="startScreenShare()">Start Screen Share</button>
-        <button onclick="goToHomeScreen()">Leave Room</button>
-    </div>
+  <script>
+    // Example functions for Join and Create Room buttons
+    function joinCall() {
+      let userName = document.getElementById('userNameInput').value;
+      if (userName) {
+        // Redirect to video call screen (for example)
+        alert('Joining public room as ' + userName);
+      } else {
+        alert('Please enter your name!');
+      }
+    }
 
-    <script src="app.js"></script>
+    function createPrivateRoom() {
+      let userName = document.getElementById('userNameInput').value;
+      if (userName) {
+        // Redirect to create private room screen (for example)
+        alert('Creating private room for ' + userName);
+      } else {
+        alert('Please enter your name!');
+      }
+    }
+  </script>
 </body>
 </html>

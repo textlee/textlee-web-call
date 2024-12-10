@@ -56,6 +56,30 @@
     button:hover {
       background-color: #FF1493; /* Darker pink on hover */
     }
+
+    #buttonContainer {
+      margin-top: 20px;
+    }
+
+    .control-button {
+      margin: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #FF69B4;
+      border: none;
+      font-size: 20px;
+      color: white;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .control-button:hover {
+      background-color: #FF1493;
+    }
   </style>
 </head>
 <body>
@@ -63,20 +87,63 @@
     <h1>Textlee Web Call</h1>
     <h2>Enter your name to get started</h2>
     <input id="userNameInput" type="text" placeholder="Enter your name" onclick="this.focus()" />
-    <button onclick="createPrivateRoom()">Create Private Room</button>
+    
+    <!-- Buttons for joining and creating rooms -->
+    <div id="buttonContainer">
+      <button onclick="createPrivateRoom()">Create Private Room</button>
+      <button onclick="joinPublicRoom()">Join Public Room</button>
+    </div>
+  </div>
+
+  <div id="controls" style="display:none;">
+    <h2>Controls</h2>
+    <div id="buttonContainer">
+      <button class="control-button" onclick="toggleCamera()">🎥</button>
+      <button class="control-button" onclick="toggleMicrophone()">🎙️</button>
+      <button class="control-button" onclick="shareScreen()">🖥️</button>
+    </div>
   </div>
 
   <script>
-    // Function for Create Private Room button
+    // Function to create a private room with a random 3-digit room ID
     function createPrivateRoom() {
       let userName = document.getElementById('userNameInput').value;
       if (userName) {
         let roomId = Math.floor(100 + Math.random() * 900); // Generate a 3-digit room ID
         alert('Your private room ID is: ' + roomId);
-        // You can redirect to a private room page here with the room ID or handle further actions
+        // You can redirect to the private room page here with the room ID or handle further actions
       } else {
         alert('Please enter your name!');
       }
+    }
+
+    // Function to join a public room
+    function joinPublicRoom() {
+      let userName = document.getElementById('userNameInput').value;
+      if (userName) {
+        alert('Joining public room as ' + userName);
+        // You can redirect to a public room or handle further actions
+      } else {
+        alert('Please enter your name!');
+      }
+    }
+
+    // Control button functions (Example placeholders)
+    function toggleCamera() {
+      alert('Camera toggled');
+    }
+
+    function toggleMicrophone() {
+      alert('Microphone toggled');
+    }
+
+    function shareScreen() {
+      alert('Screen sharing started');
+    }
+
+    // Example function to show controls after joining a room
+    function showControls() {
+      document.getElementById('controls').style.display = 'block';
     }
   </script>
 </body>

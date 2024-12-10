@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textlee Web Call</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="homeScreen">
+        <h1>Welcome to Textlee Web Call</h1>
+        <input type="text" id="userNameInput" placeholder="Enter your name">
+        <button onclick="startVideoCall()">Start Video Call</button>
+        <br>
+        <button onclick="goToVideoCallScreen()">Join Public Room</button>
+        <button onclick="createPrivateRoom()">Create Private Room</button>
+    </div>
+
+    <!-- Video Call Screen -->
+    <div id="videoCallScreen" style="display:none;">
+        <h2 id="userNameDisplay"></h2>
+        <video id="localVideo" autoplay muted></video>
+        <div id="participants"></div>
+        <button onclick="startCamera()">Start Camera</button>
+        <button onclick="startScreenShare()">Start Screen Share</button>
+        <button onclick="goToHomeScreen()">Leave Room</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

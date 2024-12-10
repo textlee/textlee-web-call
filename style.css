@@ -1,0 +1,105 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#participants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.participant-box {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.participant-box.enlarged {
+    width: 400px;
+    height: 500px;
+    transform: scale(1.5); /* Enlarge the box */
+}
+
+.participant-box video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.name {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#localVideo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#videoCallScreen button {
+    margin-top: 10px;
+}
+
+.message-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.control-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
